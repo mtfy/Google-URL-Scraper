@@ -1,15 +1,19 @@
 // ==UserScript==
-// @name         Google URL Parser
+// @name         Google URL Scraper
 // @version      1.0
-// @homepage        https://github.com/mtfy
-// @homepageURL     https://github.com/mtfy
+// @homepage     https://github.com/mtfy/Google-URL-Scraper
+// @homepageURL  https://github.com/mtfy/Google-URL-Scraper
 // @description  Scrape raw URLs from Google Search results
 // @author       mtfy
 // @require      https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js
 // @match        *www.google.com/*
 // @icon         https://icons.duckduckgo.com/ip2/google.com.ico
 // @grant        none
-// @run-at          document-end
+// @run-at       document-end
+// @copyright    2022 mtfy
+// @supportURL   https://github.com/mtfy/Google-URL-Scraper/issues
+// @updateURL    https://github.com/mtfy/Google-URL-Scraper/raw/main/Google-URL-Scraper.user.js
+// @downloadURL  https://github.com/mtfy/Google-URL-Scraper/raw/main/Google-URL-Scraper.user.js
 // ==/UserScript==
 
 (async() => {
@@ -96,25 +100,6 @@
 		if (appbar !== null) {
 			appbar.parentNode.insertBefore(div, appbar.nextSibling);
 		}
-		/*setTimeout(() => {
-			const s = document.createElement('script');
-			s.type = 'text/javascript';
-			s.referrerPolicy = 'no-referrer';
-			s.integrity = 'sha512-sIqUEnRn31BgngPmHt2JenzleDDsXwYO+iyvQ46Mw6RL+udAUZj2n/u/PGY80NxRxynO7R9xIGx5LEzw4INWJQ==';
-			s.crossOrigin = 'anonymous';
-			s.src = 'https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js';
-			document.getElementsByTagName('body')[0].appendChild(s);
-			setTimeout(() => {
-				var clipBoard = new ClipboardJS(document.getElementById('mtfy__urls'));
-				clipBoard.on('success', function (e) {
-					console.log(`[Clipboard.js]\tCopied to clipboard!`);
-				});
-			
-				clipBoard.on('error', function (e) {
-					console.error(`[Clipboard.js]\t"${e.toString()}"`);
-				});
-			}, 1000);
-		}, 10);*/
 	}
 
 	await getURIs();
